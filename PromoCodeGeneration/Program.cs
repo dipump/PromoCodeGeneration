@@ -23,4 +23,16 @@ namespace PromoCodeGeneration
             dictSKU.Add("CD", 30);
         }
     }
+
+    // Promotions with the offer price.
+    public class PromotionItems
+    {
+        public Dictionary<string, int> dictPromotionItems = new Dictionary<string, int>();
+        public decimal Price;
+    }
+
+
+    
+
+
 }
