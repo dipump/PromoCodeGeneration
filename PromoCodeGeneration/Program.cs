@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PromoCodeGeneration
 {
@@ -32,10 +33,10 @@ namespace PromoCodeGeneration
     }
 
     // Active items having promotions.
-    public class Promotions
+    public class ActivePromotions
     {
         public List<PromotionItems> lstPromotionItems = new List<PromotionItems>();
-        public Promotions()
+        public ActivePromotions()
         {
             PromotionItems A = new PromotionItems();
             A.dictPromotionItems.Add("A", 3);
@@ -55,5 +56,41 @@ namespace PromoCodeGeneration
         }
     }
 
+    public class BL
+    {
+        // Get the Promotion Offer Price.
+        public int GetPromotionOfferPrice(Dictionary<string, int> dictOrder)
+        {
+            Items items = new Items();
+            ActivePromotions promotions = new ActivePromotions();
+            int totalPrice = 0;
+            int promotionOfferPrice = 0;
 
+            foreach (var promotion in promotions.lstPromotionItems)
+            {
+                int offerPrice = 0;
+
+                var key = promotion.dictPromotionItems.First().Key;
+                if (dictOrder.ContainsKey(key))
+                {
+                    int orderQty = dictOrder[key];
+                    int offerQty = promotion.dictPromotionItems[key];
+                    int offerCount = orderQty / offerQty;
+                    int remainingQty = orderQty % offerQty;
+                    dictOrder[key] = remainingQty;
+                    offerPrice = offerCount * promotion.Price;
+                }
+
+                promotionOfferPrice = promotionOfferPrice + offerPrice;
+            }
+
+            var orderList = new List<string>(dictOrder.Keys);
+            foreach (var order in orderList)
+            {
+                var price = items.dictSKU[order] * dictOrder[order];
+                totalPrice = totalPrice + price;
+            }
+            return promotionOfferPrice + totalPrice;
+        }
+    }
 }
