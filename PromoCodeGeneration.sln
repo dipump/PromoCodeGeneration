@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PromoCodeGeneration", "PromoCodeGeneration\PromoCodeGeneration.csproj", "{EC33F114-1A75-4F98-9C5A-FC832B72AC52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PromoCodeGeneration", "PromoCodeGeneration\PromoCodeGeneration.csproj", "{EC33F114-1A75-4F98-9C5A-FC832B72AC52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PromotionTest", "PromotionTest\PromotionTest.csproj", "{8954768A-C19A-46F2-9A67-6F984443D537}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EC33F114-1A75-4F98-9C5A-FC832B72AC52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC33F114-1A75-4F98-9C5A-FC832B72AC52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC33F114-1A75-4F98-9C5A-FC832B72AC52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8954768A-C19A-46F2-9A67-6F984443D537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8954768A-C19A-46F2-9A67-6F984443D537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8954768A-C19A-46F2-9A67-6F984443D537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8954768A-C19A-46F2-9A67-6F984443D537}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

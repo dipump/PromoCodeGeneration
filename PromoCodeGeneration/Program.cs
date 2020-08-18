@@ -9,6 +9,7 @@ namespace PromoCodeGeneration
         static void Main(string[] args)
         {
         }
+
     }
 
     // All items in SKU.
